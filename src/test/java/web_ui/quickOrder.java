@@ -73,7 +73,7 @@ public class quickOrder {
 		//wait1.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\\\"root\\\"]/div[1]/div[2]/div/div[1]/div/div/div/div[2]/div/div[3]/div/button/span"))).click();
 		WebElement element4 = driver.findElement(By.xpath("//*[@id=\"root\"]/div[1]/div[2]/div/div[1]/div/div/div/div[2]/div/div[3]/div/button/span"));
 		JavascriptExecutor jse1 = (JavascriptExecutor)driver;
-		jse1.executeScript("arguments[0].click()", element4);
+		jse1.executeScript("arguments[0].click()", element4); 
 		//element4.click();
 		//driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
 		System.out.println("Signed in with Click");

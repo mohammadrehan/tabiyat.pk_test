@@ -33,13 +33,13 @@ public class SignupTest {
 			driver = new EdgeDriver();
 
 		}
-		driver.get("https://tabiyat.pk/signup");
+		driver.get("https://stg.medznmore.com/signup");
 		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
 		
 
 		driver.findElement(By.xpath("(//*[@id=\"bootstrap-input\"])[1]")).sendKeys("Test",Keys.TAB);
-		driver.findElement(By.xpath("(//*[@id=\"bootstrap-input\"])[2]")).sendKeys("test15@gmail.com",Keys.TAB);
-		driver.findElement(By.xpath("(//*[@id=\"bootstrap-input\"])[3]")).sendKeys("3880000033",Keys.TAB);
+		driver.findElement(By.xpath("(//*[@id=\"bootstrap-input\"])[2]")).sendKeys("test18@gmail.com",Keys.TAB);
+		driver.findElement(By.xpath("(//*[@id=\"bootstrap-input\"])[3]")).sendKeys("3880000036",Keys.TAB);
 		driver.findElement(By.xpath("(//*[@id=\"bootstrap-input\"])[4]")).sendKeys("Abdulazam19",Keys.TAB);
 		driver.findElement(By.xpath("(//*[@id=\"bootstrap-input\"])[5]")).sendKeys("Abdulazam19",Keys.TAB);
 		driver.findElement(By.xpath("//*[@id=\"root\"]/div[1]/div[2]/div/div[1]/div/div/div/div[2]/div/div[3]/div/button")).click();
