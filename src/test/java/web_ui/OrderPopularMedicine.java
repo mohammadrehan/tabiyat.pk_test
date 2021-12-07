@@ -21,7 +21,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class OrderMedicine {
+public class OrderPopularMedicine {
 	public static String browser = "chrome"; // external configuration -XLS,CSV
 	public static WebDriver driver;
 	
@@ -109,7 +109,7 @@ public class OrderMedicine {
 		jse.executeScript("arguments[0].click()", element7);   // click on the other checkbox option
 		Thread.sleep(800);
 		WebElement element8 = driver.findElement(By.xpath("//*[@id=\"bootstrap-input-other\"]"));
-		element8.sendKeys("azam");                          // write the location name
+		element8.sendKeys("azam12345");                          // write the location name
 		Thread.sleep(800);
 		WebElement element9 = driver.findElement(By.xpath("/html/body/div[4]/div[3]/div/div[2]/p/div[2]/div/div[5]/button"));
 		jse.executeScript("arguments[0].click()", element9);   // click on the Add Address button
@@ -117,6 +117,7 @@ public class OrderMedicine {
 		//WebElement element10 = driver.findElement(By.id("<div class=\"ep-title\">azam123456</div>"));
 		WebElement element10 = driver.findElement(By.xpath("//*[@id=\"root\"]/div[1]/div[2]/div/section/div[2]/div/div[1]/div/div[1]/div[2]/div[2]/div[2]/div[1]"));
 		//WebElement element10 = driver.findElement(By.linkText("azam1234567"));
+		//*[@id="root"]/div[1]/div[2]/div/section/div[2]/div/div[1]/div/div[1]/div[2]/div[2]/div[2]/div[2]
 		jse.executeScript("arguments[0].click()", element10);   // click on the address block for select address
 		Thread.sleep(800);
 		WebElement element11 = driver.findElement(By.xpath("//*[@id=\"root\"]/div[1]/div[2]/div/section/div[2]/div/div[1]/div/div[2]/div[2]/div/div/div/input"));
@@ -127,6 +128,9 @@ public class OrderMedicine {
 		actions.perform();
 		jse.executeScript("arguments[0].click()", element12);   // click on the Place Order Button
 		System.out.println("Ordered Successfully");
+		Thread.sleep(1500);
+		WebElement element13 = driver.findElement(By.xpath("/html/body/div[7]/div[3]/div/div[3]/button[2]"));
+		jse.executeScript("arguments[0],click()", element13);
 		
 		
 	}

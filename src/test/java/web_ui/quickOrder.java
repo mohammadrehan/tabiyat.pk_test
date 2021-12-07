@@ -88,8 +88,8 @@ public class quickOrder {
 		//WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		WebElement quickorderbutton = driver.findElement(By.xpath("//*[@id=\"root\"]/div[1]/div[1]/div/header/div[1]/div[2]/button/span[1]/div[1]"));
 		//quickorderbutton.click();
-		JavascriptExecutor jse3 = (JavascriptExecutor)driver;
-		jse3.executeScript("arguments[0].click()", quickorderbutton);
+		JavascriptExecutor jse = (JavascriptExecutor)driver;
+		jse.executeScript("arguments[0].click()", quickorderbutton);
 		WebElement element5 = driver.findElement(By.xpath("//*[@id=\"root\"]/div[1]/div[2]/div/div/div/div[2]/div[2]/div/div[1]/div/p/div/div[2]/div/section/div/div/div/div[1]/input"));
 		//WebElement element5 = driver.findElement(By.xpath("//*[@id=\"root\"]/div[1]/div[2]/div/div/div/div[2]/div[2]/div/div[1]/div/p/div/div[2]/div/section/div/div/div/div[1]/span"));
 		//element5.click();
@@ -106,24 +106,27 @@ public class quickOrder {
 		//WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofSeconds(10));
 		//wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id=\\\"root\\\"]/div[1]/div[2]/div/div/div/div[2]/div[2]/div/div[1]/div/div/button"))).click();
 		//element6.click();
-		JavascriptExecutor jse4 = (JavascriptExecutor)driver;
-		jse4.executeScript("arguments[0].click()", element6);
+		//JavascriptExecutor jse4 = (JavascriptExecutor)driver;
+		jse.executeScript("arguments[0].click()", element6);
 		System.out.println("File Uploaded");
 		//WebElement element7 = driver.findElement(By.xpath("//*[@id=\"root\"]/div[1]/div[2]/div/div/div/div[2]/div[2]/div/div[1]/div/p/div/div[2]/div[1]"));
 		WebElement element7 = driver.findElement(By.xpath("//*[@id=\"root\"]/div[1]/div[2]/div/div/div/div[2]/div[2]/div/div[1]/div/p/div/div[2]/div[3]"));
 		//element7.click();
-		JavascriptExecutor jse5 = (JavascriptExecutor)driver;
-		jse5.executeScript("arguments[0].click()", element7);
+		//JavascriptExecutor jse5 = (JavascriptExecutor)driver;
+		jse.executeScript("arguments[0].click()", element7);
 		System.out.println("Address selected");
 		WebElement element8 = driver.findElement(By.xpath("//*[@id=\"root\"]/div[1]/div[2]/div/div/div/div[2]/div[2]/div/div[1]/div/div/button"));
 		//element8.click();
-		JavascriptExecutor jse6 = (JavascriptExecutor)driver;
-		jse6.executeScript("arguments[0].click()", element8);
+		//JavascriptExecutor jse6 = (JavascriptExecutor)driver;
+		jse.executeScript("arguments[0].click()", element8);
 		System.out.println("Clicked on the next button");
 		WebElement element9 = driver.findElement(By.xpath("//*[@id=\"root\"]/div[1]/div[2]/div/div/div/div[2]/div[2]/div/div[1]/div/div/button"));
 		//element9.click();
-		JavascriptExecutor jse7 = (JavascriptExecutor)driver;
-		jse7.executeScript("arguments[0].click()", element9);
+		//JavascriptExecutor jse7 = (JavascriptExecutor)driver;
+		jse.executeScript("arguments[0].click()", element9);
 		System.out.println("Order Successsfully");
+		Thread.sleep(1500);
+		WebElement element10 = driver.findElement(By.xpath("/html/body/div[7]/div[3]/div/div[3]/button[2]"));
+		jse.executeScript("arguments[0],click()", element10);
 	}
 }
