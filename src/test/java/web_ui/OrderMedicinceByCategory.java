@@ -39,7 +39,7 @@ public class OrderMedicinceByCategory {
 		}
 		driver.manage().window().maximize();
 		LoginProcess();
-		OrderMedicineFrom_AcidReflux();
+		OrderMedicineFrom_AcidReflux();	
 		
 
 	}
@@ -138,7 +138,7 @@ public class OrderMedicinceByCategory {
 		jse.executeScript("arguments[0].click()", element16);   // click on the other checkbox option
 		Thread.sleep(1000);
 		WebElement element17 = driver.findElement(By.xpath("//*[@id=\"bootstrap-input-other\"]"));
-		element17.sendKeys("azam108");                          // write the location name
+		element17.sendKeys("azam109");                          // write the location name
 		Thread.sleep(1000);
 		WebElement element18 = driver.findElement(By.xpath("/html/body/div[4]/div[3]/div/div[2]/p/div[2]/div/div[5]/button"));
 		jse.executeScript("arguments[0].click()", element18);   // click on the Add Address button

@@ -125,8 +125,11 @@ public class quickOrder {
 		//JavascriptExecutor jse7 = (JavascriptExecutor)driver;
 		jse.executeScript("arguments[0].click()", element9);
 		System.out.println("Order Successsfully");
-		Thread.sleep(1500);
+		Thread.sleep(1000);
 		WebElement element10 = driver.findElement(By.xpath("/html/body/div[7]/div[3]/div/div[3]/button[2]"));
 		jse.executeScript("arguments[0],click()", element10);
+		Thread.sleep(3000);
+		WebElement element11 = driver.findElement(By.xpath("/html/body/div[4]/div[3]/div/div[3]/button[2]"));
+		jse.executeScript("arguments[0],click()", element11);
 	}
 }

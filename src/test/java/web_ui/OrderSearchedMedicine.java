@@ -106,7 +106,7 @@ public class OrderSearchedMedicine {
 		jse.executeScript("arguments[0].click()", element7);   // click on the other checkbox option
 		Thread.sleep(800);
 		WebElement element8 = driver.findElement(By.xpath("//*[@id=\"bootstrap-input-other\"]"));
-		element8.sendKeys("azam15");                          // write the location name
+		element8.sendKeys("azam16");                          // write the location name
 		Thread.sleep(800);
 		WebElement element9 = driver.findElement(By.xpath("/html/body/div[4]/div[3]/div/div[2]/p/div[2]/div/div[5]/button"));
 		jse.executeScript("arguments[0].click()", element9);   // click on the Add Address button
