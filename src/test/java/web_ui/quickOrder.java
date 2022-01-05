@@ -82,6 +82,7 @@ public class quickOrder {
 	
 	
 	public static void quickorderprocess() throws InterruptedException {
+		for(int i = 0;i<3;i++) {
 		//driver.get("https://stg.medznmore.com");
 		//driver.get("https://stg.medznmore.com/quick-order/Upload");
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
@@ -125,11 +126,16 @@ public class quickOrder {
 		//JavascriptExecutor jse7 = (JavascriptExecutor)driver;
 		jse.executeScript("arguments[0].click()", element9);
 		System.out.println("Order Successsfully");
-		Thread.sleep(1000);
-		WebElement element10 = driver.findElement(By.xpath("/html/body/div[7]/div[3]/div/div[3]/button[2]"));
-		jse.executeScript("arguments[0],click()", element10);
+		System.out.println("Order number : " + i);
+//		Thread.sleep(1000);
+//		WebElement element10 = driver.findElement(By.xpath("/html/body/div[7]/div[3]/div/div[3]/button[2]"));
+//		jse.executeScript("arguments[0].click()", element10);
 		Thread.sleep(3000);
 		WebElement element11 = driver.findElement(By.xpath("/html/body/div[4]/div[3]/div/div[3]/button[2]"));
-		jse.executeScript("arguments[0],click()", element11);
+		jse.executeScript("arguments[0].click()", element11);
+		
+		}
+		System.out.println("Done Orders");
+		
 	}
 }

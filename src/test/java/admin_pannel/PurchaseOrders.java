@@ -64,6 +64,9 @@ public class PurchaseOrders {
 	// Login Process Complete 
 	
 	public static void PurchaseOrdersProcess() throws InterruptedException {
+		//driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
+		new WebDriverWait(driver, Duration.ofSeconds(10));
+
 		Thread.sleep(2000);
 		Thread.sleep(5000);
 		JavascriptExecutor jse = (JavascriptExecutor)driver;
