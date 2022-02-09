@@ -1,4 +1,4 @@
-package admin_pannel;
+package admin_pannel.PurchaseOrder;
 import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
@@ -49,6 +49,7 @@ public class PurchaseOrders {
 	
 	public static void LoginProcess() throws InterruptedException {
 		driver.get("https://stg-admin.medznmore.com/login");
+		//driver.get("http://localhost:8080/login");
 		Thread.sleep(1000);
 		WebElement element1 = driver.findElement(By.xpath("//*[@id=\"root\"]/div/div/div/div/div[1]/form/div[1]/div/input"));
 		element1.sendKeys("azamtest@gmail.com");
@@ -64,7 +65,7 @@ public class PurchaseOrders {
 	// Login Process Complete 
 	
 	public static void PurchaseOrdersProcess() throws InterruptedException {
-		//driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
 		new WebDriverWait(driver, Duration.ofSeconds(10));
 
 		Thread.sleep(2000);
@@ -86,39 +87,47 @@ public class PurchaseOrders {
 		jse.executeScript("arguments[0].click()", element4);   // Click on the Store Dropdown
 		Thread.sleep(2000);
 		element4.sendKeys(Keys.ARROW_DOWN);
-		Thread.sleep(500);
+		Thread.sleep(300);
 		element4.sendKeys(Keys.ARROW_DOWN);
-		Thread.sleep(500);
+		Thread.sleep(300);
 		element4.sendKeys(Keys.ARROW_DOWN);
-		Thread.sleep(500);
+		Thread.sleep(300);
 		element4.sendKeys(Keys.ARROW_DOWN);
-		Thread.sleep(500);
+		Thread.sleep(300);
 		element4.sendKeys(Keys.ARROW_DOWN);
-		Thread.sleep(500);
+		Thread.sleep(300);
 		element4.sendKeys(Keys.ENTER);
 		Thread.sleep(2000);
-		WebElement element5 = driver.findElement(By.xpath("//*[@id=\"root\"]/div/div[2]/div[2]/div/div[2]/div/div[2]/div/div[2]/div/div/div/div/button[2]"));
-		jse.executeScript("arguments[0].click()", element5);   // Click on the Distributer dropdown
+		//WebElement element5 = driver.findElement(By.xpath("//*[@id=\"root\"]/div/div[2]/div[2]/div/div[2]/div/div[2]/div/div[2]/div/div/div/div/button[2]"));
+		WebElement element5a = driver.findElement(By.xpath("//*[@id=\"distributor-dropdown\"]"));
+		//jse.executeScript("arguments[0].click()", element5);   // Click on the Distributer dropdown
 		Thread.sleep(1000);
-		element5.sendKeys(Keys.ARROW_DOWN);
-		Thread.sleep(500);
-		element5.sendKeys(Keys.ARROW_DOWN);
-		Thread.sleep(500);
-		element5.sendKeys(Keys.ARROW_DOWN);
-		Thread.sleep(500);
-		element5.sendKeys(Keys.ENTER);
+		element5a.sendKeys("Real");
+		Thread.sleep(1000);
+		element5a.sendKeys(Keys.ARROW_DOWN);
+		Thread.sleep(300);
+		element5a.sendKeys(Keys.ARROW_DOWN);
+		Thread.sleep(300);
+//		element5.sendKeys(Keys.ARROW_DOWN);
+//		Thread.sleep(300);
+//		element5.sendKeys(Keys.ARROW_DOWN);
+//		Thread.sleep(300);
+		element5a.sendKeys(Keys.ENTER);
 		Thread.sleep(2000);
-		WebElement element6 = driver.findElement(By.xpath("//*[@id=\"root\"]/div/div[2]/div[2]/div/div[2]/div/div[3]/div[2]/div/div/div/div/button[2]"));
-		jse.executeScript("arguments[0].click()", element6);   // Click on the Products dropdown
-		Thread.sleep(800);
-		element6.sendKeys(Keys.ARROW_DOWN);
-		Thread.sleep(500);
-		element6.sendKeys(Keys.ARROW_DOWN);
-		Thread.sleep(500);
-		element6.sendKeys(Keys.ENTER);
+		//WebElement element6 = driver.findElement(By.xpath("//*[@id=\"root\"]/div/div[2]/div[2]/div/div[2]/div/div[3]/div[2]/div/div/div/div/button[2]"));
+		WebElement element6a = driver.findElement(By.xpath("//*[@id=\"store-product-dropdown\"]"));
+		//jse.executeScript("arguments[0].click()", element6);   // Click on the Products dropdown
+		Thread.sleep(1000);
+		element6a.sendKeys("Augmentin bd");
+		Thread.sleep(3000);
+		element6a.sendKeys(Keys.ARROW_DOWN);
+		Thread.sleep(300);
+		element6a.sendKeys(Keys.ARROW_DOWN);
+		Thread.sleep(300);
+		element6a.sendKeys(Keys.ENTER);
 		Thread.sleep(800);
 		WebElement element7 = driver.findElement(By.xpath("//*[@id=\"root\"]/div/div[2]/div[2]/div/div[2]/div/div[3]/div[3]/table/tbody/tr/td[5]/div/div/input"));
-		element7.sendKeys("0");
+		element7.sendKeys("00");
 		Thread.sleep(800);
 		WebElement element8 = driver.findElement(By.xpath("//*[@id=\"root\"]/div/div[2]/div[2]/div/div[2]/div/div[4]/button"));
 		jse.executeScript("arguments[0].click()", element8);   // Click on the CREATE PO 
@@ -126,7 +135,9 @@ public class PurchaseOrders {
 		WebElement element9 = driver.findElement(By.xpath("/html/body/div[3]/div[3]/div/div/div[2]/button[1]"));
 		jse.executeScript("arguments[0].click()", element9);   // Click on the CREATE PO Conformation
 		Thread.sleep(4000);
-		WebElement element10 = driver.findElement(By.xpath("//*[@id=\"root\"]/div/div[2]/div[2]/div/div/div[2]/table/tbody/tr[1]/td[9]/button[1]"));
+		//WebElement element10 = driver.findElement(By.xpath("//*[@id=\"root\"]/div/div[2]/div[2]/div/div/div[2]/table/tbody/tr[1]/td[9]/button[1]"));
+		WebElement element10 = driver.findElement(By.xpath("//*[@id=\"root\"]/div/div[2]/div[2]/div/div/div[2]/table/tbody/tr[1]/td[10]/button[1]"));
+		
 		jse.executeScript("arguments[0].click()", element10);   // Click on the PO Conform icon
 		Thread.sleep(1000);
 		WebElement element11 = driver.findElement(By.xpath("/html/body/div[3]/div[3]/div/div/div[2]/button[1]"));
@@ -149,16 +160,17 @@ public class PurchaseOrders {
 		WebElement element2 = driver.findElement(By.xpath("//span[text() = 'PO Assignment']"));
 		jse.executeScript("arguments[0].click()", element2);   // Click on the PO Assignment.
 		Thread.sleep(4000);
-		WebElement element3 = driver.findElement(By.cssSelector("#root > div > div.main-section > div.route-root > div > div > div.MuiPaper-root.MuiTableContainer-root.MuiPaper-outlined.MuiPaper-rounded > table > tbody > tr:nth-child(1) > td:nth-child(11) > button.MuiButtonBase-root.MuiIconButton-root.ml-2.MuiIconButton-sizeSmall"));
+		WebElement element3 = driver.findElement(By.xpath("//*[@id=\"root\"]/div/div[2]/div[2]/div/div/div[2]/table/tbody/tr[1]/td[12]/button[2]"));
+		//WebElement element3 = driver.findElement(By.cssSelector("#root > div > div.main-section > div.route-root > div > div > div.MuiPaper-root.MuiTableContainer-root.MuiPaper-outlined.MuiPaper-rounded > table > tbody > tr:nth-child(1) > td:nth-child(11) > button.MuiButtonBase-root.MuiIconButton-root.ml-2.MuiIconButton-sizeSmall"));
 		jse.executeScript("arguments[0].click()", element3);   // Click on the Assignment icon
 		Thread.sleep(1000);
 		WebElement element4 = driver.findElement(By.xpath("/html/body/div[3]/div[3]/div/div[2]/div/div/div/div/button[2]"));
 		jse.executeScript("arguments[0].click()", element4);   // Click on the Assignment dropdown
 		Thread.sleep(800);
 		element4.sendKeys(Keys.ARROW_DOWN);
-		Thread.sleep(500);
+		Thread.sleep(300);
 		element4.sendKeys(Keys.ARROW_DOWN);
-		Thread.sleep(500);
+		Thread.sleep(300);
 		element4.sendKeys(Keys.ENTER);
 		Thread.sleep(800);
 		WebElement element5 = driver.findElement(By.xpath("/html/body/div[3]/div[3]/div/div[3]/button[1]"));
@@ -180,7 +192,8 @@ public class PurchaseOrders {
 		WebElement element2 = driver.findElement(By.xpath("//span[text() = 'PO Receiving']"));
 		jse.executeScript("arguments[0].click()", element2);   // Click on the PO Receiving.
 		Thread.sleep(4000);
-		WebElement element3 = driver.findElement(By.cssSelector("#root > div > div.main-section > div.route-root > div > div > div.MuiPaper-root.MuiTableContainer-root.MuiPaper-outlined.MuiPaper-rounded > table > tbody > tr:nth-child(1) > td:nth-child(13) > button"));
+		WebElement element3 = driver.findElement(By.xpath("//*[@id=\"root\"]/div/div[2]/div[2]/div/div/div[2]/table/tbody/tr[1]/td[14]/button"));
+		//WebElement element3 = driver.findElement(By.cssSelector("#root > div > div.main-section > div.route-root > div > div > div.MuiPaper-root.MuiTableContainer-root.MuiPaper-outlined.MuiPaper-rounded > table > tbody > tr:nth-child(1) > td:nth-child(13) > button"));
 		jse.executeScript("arguments[0].click()", element3);   // Click on the Action Icon.
 		Thread.sleep(3000);
 		WebElement element4 = driver.findElement(By.cssSelector("#root > div > div.main-section > div.route-root > div > div.customers-root > div > div:nth-child(5) > div.MuiPaper-root.MuiTableContainer-root.MuiPaper-outlined.MuiPaper-rounded > table > tbody > tr > td:nth-child(8) > button"));
@@ -189,7 +202,7 @@ public class PurchaseOrders {
 		WebElement element5 = driver.findElement(By.xpath("//*[@id=\"batch-number\"]"));
 		
 	//-------------------ENTER THE BATCH NUMBER-----------------------//	
-		element5.sendKeys("105");			// Enter Batch Number
+		element5.sendKeys("1088");			// Enter Batch Number
 	//-------------------ENTER THE BATCH NUMBER-----------------------//	
 				
 		Thread.sleep(500);
@@ -210,10 +223,10 @@ public class PurchaseOrders {
 		element8.sendKeys("3-10-002022");    // Enter Batch Expiry Date
 		Thread.sleep(500);
 		WebElement element9 = driver.findElement(By.xpath("//*[@id=\"quantity\"]"));
-		element9.sendKeys("10");           // Enter Quantity
+		element9.sendKeys("100");           // Enter Quantity
 		Thread.sleep(500);
 		WebElement element10 = driver.findElement(By.xpath("//*[@id=\"foc\"]"));
-		element10.sendKeys("1");           // Enter FOC
+		element10.sendKeys("0");           // Enter FOC
 		Thread.sleep(500);
 		WebElement element11 = driver.findElement(By.xpath("//*[@id=\"tradePrice\"]"));
 		element11.sendKeys("100");         // Enter Trade Price
@@ -222,7 +235,7 @@ public class PurchaseOrders {
 		element12.sendKeys("120");         // Enter Retial Price
 		Thread.sleep(500);
 		WebElement element13 = driver.findElement(By.xpath("//*[@id=\"discountRate\"]"));
-		element13.sendKeys("5");           // Enter DiscountRate
+		element13.sendKeys("17");           // Enter DiscountRate
 		Thread.sleep(500);
 		WebElement element14 = driver.findElement(By.xpath("//*[@id=\"discountType\"]"));
 		Thread.sleep(500);
@@ -250,7 +263,7 @@ public class PurchaseOrders {
 		WebElement element17 = driver.findElement(By.xpath("//*[@id=\"invoiceNumber\"]"));
 		
 		//-------------------ENTER THE PO INVOICE NUMBER-----------------------//
-		element17.sendKeys("13");			// Enter the PO Invoice Number
+		element17.sendKeys("14");			// Enter the PO Invoice Number
 		//-------------------ENTER THE PO INVOICE NUMBER-----------------------//
 		
 		WebElement element18 = driver.findElement(By.xpath("//*[@id=\"root\"]/div/div[2]/div[2]/div/div[2]/div/div[5]/button"));

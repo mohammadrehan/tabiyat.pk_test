@@ -77,6 +77,8 @@ public class OrderPaymentByCard {
 	}
 	
 public static void OrderPaymentByCardProcess() throws InterruptedException {
+	int i;
+	for(i=0;i<2;i++) {
 	driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		JavascriptExecutor jse = (JavascriptExecutor)driver;
 //		WebElement moveto = driver.findElement(By.xpath("//*[@id=\"root\"]/div[1]/div[2]/div/section[4]/div/div/div/div[1]/div[2]/div[1]/a"));
@@ -171,7 +173,7 @@ public static void OrderPaymentByCardProcess() throws InterruptedException {
 		WebElement element23 = driver.findElement(By.xpath("/html/body/div[4]/div[3]/div/div[3]/button[2]"));
 		jse.executeScript("arguments[0].click()", element23);
 		System.out.println("Order Placed");
-		
+	}
 		
 		
 		

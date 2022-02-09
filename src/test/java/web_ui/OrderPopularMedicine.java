@@ -131,13 +131,14 @@ public class OrderPopularMedicine {
 		actions.moveToElement(element12);
 		actions.perform();
 		jse.executeScript("arguments[0].click()", element12);   // click on the Place Order Button
-		System.out.println("Ordered Successfully");
-		System.out.print(i);
+		//System.out.print(i+1);
+		System.out.println(" Order Successfully");
 		Thread.sleep(4000);
 		WebElement element13 = driver.findElement(By.xpath("/html/body/div[4]/div[3]/div/div[3]/button[2]"));
 		jse.executeScript("arguments[0].click()", element13);
-		}
-		System.out.println("Order Completed");
+		//}
+		System.out.println("Orders Completed");
+	}
 	}
 
 }
