@@ -39,11 +39,11 @@ import org.testng.annotations.Test;
 import io.github.bonigarcia.wdm.WebDriverManager;
 //import org.openqa.selenium.WebElement;
 //import static org.openqa.selenium.support.locators.RelativeLocator;
-
+@Test(groups="login")
 public class Login {
 	//public static String browser = "chrome"; // external configuration -XLS,CSV
 	public static WebDriver driver;
-	@Test
+	@Test(groups="login_positive")
 	public void LoginProcess() {
 //		if (browser.equals("Firfor")) {
 //			WebDriverManager.firefoxdriver().setup();
@@ -70,7 +70,7 @@ public class Login {
 		//driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
 		System.out.println("Signed in with Click");
 		System.out.println("Sign in successfully");
-		//driver.quit();
+		driver.quit();
 		
 	}
 }

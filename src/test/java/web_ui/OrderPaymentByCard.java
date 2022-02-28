@@ -63,7 +63,7 @@ public class OrderPaymentByCard {
 		JavascriptExecutor jse = (JavascriptExecutor)driver;
 		jse.executeScript("arguments[0].click()", element2);
 		WebElement element3 =  driver.findElement(By.xpath("(//*[@id=\"bootstrap-input\"])[2]"));
-		element3.sendKeys("Abdulazam19");
+		element3.sendKeys("Azam1234567");
 		Thread.sleep(800);
 		//WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofSeconds(1));
 		//wait1.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\\\"root\\\"]/div[1]/div[2]/div/div[1]/div/div/div/div[2]/div/div[3]/div/button/span"))).click();

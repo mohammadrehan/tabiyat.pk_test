@@ -5,6 +5,7 @@
     <classes>
       <class name="web_ui.LoginTest">
         <methods>
+          <include name="quit"/>
           <include name="webdriverselection"/>
           <include name="login"/>
         </methods>

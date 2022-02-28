@@ -15,7 +15,6 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.testng.Assert;
-
 //import org.testng.annotations.Test;
 public class FooterTest {
 	public static String browser = "chrome"; // external configuration -XLS,CSV

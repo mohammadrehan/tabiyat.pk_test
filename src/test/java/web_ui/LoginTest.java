@@ -13,6 +13,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
 import org.testng.Reporter;
 import org.testng.annotations.*;
+import org.testng.asserts.SoftAssert;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 //import org.openqa.selenium.WebElement;
@@ -37,8 +38,9 @@ public class LoginTest {
 			driver = new EdgeDriver();
 		}
 	}
-	@Test
+	@Test(priority=1,description="This is Login Method")
 	public void login() throws InterruptedException {
+		SoftAssert softassert = new SoftAssert();
 		driver.get("https://tabiyat.pk/login");
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.findElement(By.xpath("(//*[@id=\"bootstrap-input\"])[1]")).sendKeys("3351291126");
@@ -55,8 +57,12 @@ public class LoginTest {
 		System.out.println("Signed in with Click");
 		System.out.println("Sign in successfully");
 		Thread.sleep(1500);
+		//String actualtitle = driver.getTitle();
 		String actualUrl = "https://tabiyat.pk/";
 		String expectedUrl = driver.getCurrentUrl();
+		softassert.assertEquals(actualUrl, expectedUrl, "This is login varification");
+		
+		//softassert.assertAll();
 		if(actualUrl.equalsIgnoreCase(expectedUrl)) {
 			System.out.println("Test Case Passed");
 		}
@@ -64,6 +70,10 @@ public class LoginTest {
 			System.out.println("Test Case Failed");
 		}
 		//Assert.assertEquals(actualUrl,expectedUrl);
+		
+	}
+	@AfterTest
+	public void quit() {
 		driver.quit();
 	}
 }

@@ -46,7 +46,7 @@ public class OrderPopularMedicine {
 	public static void LoginProcess() throws InterruptedException {
 		driver.get("https://stg.medznmore.com/login");
 		
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		
 		WebElement element1 = driver.findElement(By.xpath("(//*[@id=\"bootstrap-input\"])[1]"));
 		Thread.sleep(800);
