@@ -34,30 +34,33 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 //import org.openqa.selenium.WebElement;
 //import static org.openqa.selenium.support.locators.RelativeLocator;
-@Test(groups="login")
+//@Test(groups="login")
 public class Login {
-	//public static String browser = "chrome"; // external configuration -XLS,CSV
+	public static String browser = "chrome"; // external configuration -XLS,CSV
 	public static WebDriver driver;
+	@BeforeTest
+	public void weddriverselection() {
+		if (browser.equals("Firfor")) {
+			WebDriverManager.firefoxdriver().setup();
+			driver = new FirefoxDriver();
+		} else if (browser.equals("chrome")) {
+			WebDriverManager.chromedriver().setup();
+			driver = new ChromeDriver();
+
+		} else if (browser.equals("edge")) {
+			WebDriverManager.edgedriver().setup();
+			driver = new EdgeDriver();
+		}
+	}
 	@Test(groups="login_positive")
-	public void LoginProcess() {
-//		if (browser.equals("Firfor")) {
-//			WebDriverManager.firefoxdriver().setup();
-//			driver = new FirefoxDriver();
-//		} else if (browser.equals("chrome")) {
-//			WebDriverManager.chromedriver().setup();
-//			driver = new ChromeDriver();
-//
-//		} else if (browser.equals("edge")) {
-//			WebDriverManager.edgedriver().setup();
-//			driver = new EdgeDriver();
-//		}
+	public void loginProcess() {
 		driver.get("https://stg.medznmore.com/login");
-		//driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.findElement(By.xpath("(//*[@id=\"bootstrap-input\"])[1]")).sendKeys("3351291126");
 		WebElement element1 = driver.findElement(
 				By.xpath("//*[@id=\"root\"]/div[1]/div[2]/div/div[1]/div/div/div/div[2]/div/div[2]/div[2]/button[1]"));
@@ -70,7 +73,11 @@ public class Login {
 		//driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
 		System.out.println("Signed in with Click");
 		System.out.println("Sign in successfully");
-		driver.quit();
+		//driver.quit();
 		
+	}
+	@AfterTest
+	public void quit() {
+		driver.quit();
 	}
 }

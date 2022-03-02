@@ -8,13 +8,6 @@
           <include name="LoginProcess"/>
         </methods>
       </class> <!-- web_ui.Login -->
-      <class name="web_ui.LoginTest">
-        <methods>
-          <include name="quit"/>
-          <include name="webdriverselection"/>
-          <include name="login"/>
-        </methods>
-      </class> <!-- web_ui.LoginTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

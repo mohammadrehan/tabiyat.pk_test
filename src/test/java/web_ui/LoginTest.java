@@ -22,7 +22,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class LoginTest {
 	public static String browser = "chrome"; // external configuration -XLS,CSV
 	public static WebDriver driver;
-	@BeforeMethod
+	@BeforeTest
 	public void webdriverselection(){
 	 
 
