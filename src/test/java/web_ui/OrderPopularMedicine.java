@@ -27,7 +27,7 @@ public class OrderPopularMedicine {
 	
 
 	@BeforeTest
-	public static void ChromeSelection() {
+	public void ChromeSelection() {
 		if (browser.equals("Firfor")) {
 			WebDriverManager.firefoxdriver().setup();
 			driver = new FirefoxDriver();
@@ -45,7 +45,7 @@ public class OrderPopularMedicine {
 
 	}
 	@BeforeMethod
-	public static void LoginProcess() {
+	public void LoginProcess() {
 		driver.get("https://stg.medznmore.com/login");
 		
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
@@ -64,7 +64,7 @@ public class OrderPopularMedicine {
 	}
 	
 	@Test(groups="OrderFlow", description="Order Popular Medicine")
-	public static void OrderMedicineProcess() {
+	public void OrderMedicineProcess() {
 		
 		//int i;
 		JavascriptExecutor jse = (JavascriptExecutor)driver;
@@ -135,6 +135,11 @@ public class OrderPopularMedicine {
 	@AfterTest
 	public void quit() {
 		driver.quit();
+	}
+	@AfterSuite
+	public void ReportEmailSend() {
+		EmailTheReport etr = new EmailTheReport();
+		etr.EmailSend();
 	}
 
 }

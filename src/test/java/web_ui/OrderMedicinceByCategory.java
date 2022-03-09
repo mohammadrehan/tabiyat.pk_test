@@ -26,7 +26,7 @@ public class OrderMedicinceByCategory {
 	public static WebDriver driver;	
 
 	@BeforeTest
-	public static void ChromeSelection() {
+	public void ChromeSelection() {
 		if (browser.equals("Firfor")) {
 			WebDriverManager.firefoxdriver().setup();
 			driver = new FirefoxDriver();
@@ -45,7 +45,7 @@ public class OrderMedicinceByCategory {
 
 	}
 	@BeforeMethod
-	public static void LoginProcess() {
+	public void LoginProcess() {
 		driver.get("https://stg.medznmore.com/login");
 		
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
@@ -63,7 +63,7 @@ public class OrderMedicinceByCategory {
 		System.out.println("Sign in successfully");
 	}
 	@Test(groups="OrderFlow", description="Order Medicine By Category")
-	public static void OrderMedicineFrom_AcidReflux() {
+	public void OrderMedicineFrom_AcidReflux() {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		JavascriptExecutor jse = (JavascriptExecutor)driver;
 		Actions actions = new Actions(driver);
@@ -151,8 +151,8 @@ public class OrderMedicinceByCategory {
 		actions.perform();
 		jse.executeScript("arguments[0].click()", element21a);   // click on the Place Order Button
 		System.out.println("Ordered Successfully");
-		WebElement element22a = new WebDriverWait(driver, Duration.ofSeconds(3))
-				.until(ExpectedConditions.presenceOfElementLocated(By.xpath("/html/body/div[9]/div[3]/div/div[3]/button[2]")));
+		WebElement element22a = new WebDriverWait(driver, Duration.ofSeconds(5))
+				.until(ExpectedConditions.presenceOfElementLocated(By.xpath("/html/body/div[4]/div[3]/div/div[3]/button[2]")));
 		jse.executeScript("arguments[0].click()", element22a);
 		
 	}
@@ -160,5 +160,6 @@ public class OrderMedicinceByCategory {
 	public void quit() {
 		driver.quit();
 	}
+	
 
 }

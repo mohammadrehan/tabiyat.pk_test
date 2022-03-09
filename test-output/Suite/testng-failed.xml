@@ -3,11 +3,39 @@
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="web_ui.Login">
+      <class name="web_ui.QuickOrder">
         <methods>
+          <include name="quickorderprocess"/>
+          <include name="ChromeSelection"/>
+          <include name="quit"/>
           <include name="LoginProcess"/>
         </methods>
-      </class> <!-- web_ui.Login -->
+      </class> <!-- web_ui.QuickOrder -->
+      <class name="web_ui.OrderPopularMedicine">
+        <methods>
+          <include name="OrderMedicineProcess"/>
+          <include name="ReportEmailSend"/>
+          <include name="ChromeSelection"/>
+          <include name="quit"/>
+          <include name="LoginProcess"/>
+        </methods>
+      </class> <!-- web_ui.OrderPopularMedicine -->
+      <class name="web_ui.OrderMedicinceByCategory">
+        <methods>
+          <include name="LoginProcess"/>
+          <include name="quit"/>
+          <include name="OrderMedicineFrom_AcidReflux"/>
+          <include name="ChromeSelection"/>
+        </methods>
+      </class> <!-- web_ui.OrderMedicinceByCategory -->
+      <class name="web_ui.OrderPaymentByCard">
+        <methods>
+          <include name="LoginProcess"/>
+          <include name="ChromeSelection"/>
+          <include name="OrderPaymentByCardProcess"/>
+          <include name="quit"/>
+        </methods>
+      </class> <!-- web_ui.OrderPaymentByCard -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

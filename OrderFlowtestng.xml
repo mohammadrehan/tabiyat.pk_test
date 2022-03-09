@@ -6,6 +6,7 @@
       <class name="web_ui.OrderPopularMedicine"/>
       <class name="web_ui.OrderMedicinceByCategory"/>
       <class name="web_ui.OrderPaymentByCard"/>
+      <class name="web_ui.QuickOrder"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

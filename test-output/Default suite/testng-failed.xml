@@ -3,13 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="web_ui.LoginTest">
+      <class name="web_ui.QuickOrder">
         <methods>
+          <include name="quickorderprocess"/>
+          <include name="ChromeSelection"/>
           <include name="quit"/>
-          <include name="webdriverselection"/>
-          <include name="login"/>
+          <include name="LoginProcess"/>
         </methods>
-      </class> <!-- web_ui.LoginTest -->
+      </class> <!-- web_ui.QuickOrder -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

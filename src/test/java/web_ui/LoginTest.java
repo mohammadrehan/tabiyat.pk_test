@@ -1,5 +1,6 @@
 package web_ui;
 
+import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 //import org.junit.Test;
@@ -42,7 +43,7 @@ public class LoginTest {
 	public void login() throws InterruptedException {
 		SoftAssert softassert = new SoftAssert();
 		driver.get("https://tabiyat.pk/login");
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		driver.findElement(By.xpath("(//*[@id=\"bootstrap-input\"])[1]")).sendKeys("3351291126");
 		Reporter.log("The data\"3351291126\"Entered");
 		WebElement element1 = driver.findElement(By.xpath("//*[@id=\"root\"]/div[1]/div[2]/div/div[1]/div/div/div/div[2]/div/div[2]/div[2]/button[1]"));
@@ -53,7 +54,7 @@ public class LoginTest {
 		WebElement element2 = driver.findElement(
 				By.xpath("//*[@id=\"root\"]/div[1]/div[2]/div/div[1]/div/div/div/div[2]/div/div[3]/div/button/span"));
 		jse1.executeScript("arguments[0].click()", element2);
-		driver.manage().timeouts().implicitlyWait(4, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(4));
 		System.out.println("Signed in with Click");
 		System.out.println("Sign in successfully");
 		Thread.sleep(1500);

@@ -48,15 +48,15 @@ public class PurchaseOrders {
 	}
 	
 	public static void LoginProcess() throws InterruptedException {
-		driver.get("https://stg-admin.medznmore.com/login");
+		driver.get("https://stageadmin.medznmore.com/login");
 		//driver.get("http://localhost:8080/login");
-		Thread.sleep(1000);
+		//Thread.sleep(1000);
 		WebElement element1 = driver.findElement(By.xpath("//*[@id=\"root\"]/div/div/div/div/div[1]/form/div[1]/div/input"));
 		element1.sendKeys("azamtest@gmail.com");
-		Thread.sleep(800);
+		//Thread.sleep(800);
 		WebElement element2 = driver.findElement(By.xpath("//*[@id=\"root\"]/div/div/div/div/div[1]/form/div[2]/div/input"));
 		element2.sendKeys("1234567");
-		Thread.sleep(800);
+		//Thread.sleep(800);
 		JavascriptExecutor jse = (JavascriptExecutor)driver;
 		WebElement element3 = driver.findElement(By.xpath("//*[@id=\"root\"]/div/div/div/div/div[1]/form/button"));
 		jse.executeScript("arguments[0].click()", element3);
@@ -65,39 +65,46 @@ public class PurchaseOrders {
 	// Login Process Complete 
 	
 	public static void PurchaseOrdersProcess() throws InterruptedException {
-		driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		new WebDriverWait(driver, Duration.ofSeconds(10));
+		
 
-		Thread.sleep(2000);
-		Thread.sleep(5000);
+		//Thread.sleep(2000);
+		//Thread.sleep(5000);
 		JavascriptExecutor jse = (JavascriptExecutor)driver;
-		WebElement element1 = driver.findElement(By.xpath("//span[text() = 'Purchase Orders']"));
+		WebElement element1a = new WebDriverWait(driver, Duration.ofSeconds(6))
+				.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//span[text() = 'Purchase Orders']")));
+		//WebElement element1 = driver.findElement(By.xpath("//span[text() = 'Purchase Orders']"));
 															// Click on the Purchase orders option
 		Actions actions = new Actions(driver);
-		actions.moveToElement(element1);
+		actions.moveToElement(element1a);
 		actions.perform();
-		Thread.sleep(2000);
+		//Thread.sleep(2000);
 		WebElement element2 = driver.findElement(By.xpath("//span[text() = 'PO Management']"));
 		jse.executeScript("arguments[0].click()", element2);   // Click on the PO Management
-		Thread.sleep(2000);
-		WebElement element3 = driver.findElement(By.xpath("//*[@id=\"root\"]/div/div[2]/div[2]/div/div/div[1]/a"));
-		jse.executeScript("arguments[0].click()", element3);   // Click on the CREATE
-		Thread.sleep(2000);
-		WebElement element4 = driver.findElement(By.xpath("//*[@id=\"root\"]/div/div[2]/div[2]/div/div[2]/div/div[2]/div/div[1]/div/div/div/div/button[2]"));
-		jse.executeScript("arguments[0].click()", element4);   // Click on the Store Dropdown
-		Thread.sleep(2000);
-		element4.sendKeys(Keys.ARROW_DOWN);
-		Thread.sleep(300);
-		element4.sendKeys(Keys.ARROW_DOWN);
-		Thread.sleep(300);
-		element4.sendKeys(Keys.ARROW_DOWN);
-		Thread.sleep(300);
-		element4.sendKeys(Keys.ARROW_DOWN);
-		Thread.sleep(300);
-		element4.sendKeys(Keys.ARROW_DOWN);
-		Thread.sleep(300);
-		element4.sendKeys(Keys.ENTER);
-		Thread.sleep(2000);
+		//Thread.sleep(2000);
+		WebElement element3a = new WebDriverWait(driver, Duration.ofSeconds(3))
+				.until(ExpectedConditions.presenceOfElemen(By.xpath("//*[@id=\\\"root\\\"]/div/div[2]/div[2]/div/div/div[1]/a")));
+		//WebElement element3 = driver.findElement(By.xpath("//*[@id=\"root\"]/div/div[2]/div[2]/div/div/div[1]/a"));
+		jse.executeScript("arguments[0].click()", element3a);   // Click on the CREATE
+		//Thread.sleep(2000);
+		WebElement element4a = new WebDriverWait(driver, Duration.ofSeconds(3))
+				.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\\\"root\\\"]/div/div[2]/div[2]/div/div[2]/div/div[2]/div/div[1]/div/div/div/div/button[2]")));
+		//WebElement element4 = driver.findElement(By.xpath("//*[@id=\"root\"]/div/div[2]/div[2]/div/div[2]/div/div[2]/div/div[1]/div/div/div/div/button[2]"));
+		jse.executeScript("arguments[0].click()", element4a);   // Click on the Store Dropdown
+		//Thread.sleep(2000);
+		element4a.sendKeys("Pechs");
+		//Thread.sleep(300);
+		element4a.sendKeys(Keys.ARROW_DOWN);
+		//Thread.sleep(300);
+		element4a.sendKeys(Keys.ARROW_DOWN);
+		//Thread.sleep(300);
+		//element4a.sendKeys(Keys.ARROW_DOWN);
+		//Thread.sleep(300);
+		//element4a.sendKeys(Keys.ARROW_DOWN);
+		//Thread.sleep(300);
+		element4a.sendKeys(Keys.ENTER);
+		//Thread.sleep(2000);
 		//WebElement element5 = driver.findElement(By.xpath("//*[@id=\"root\"]/div/div[2]/div[2]/div/div[2]/div/div[2]/div/div[2]/div/div/div/div/button[2]"));
 		WebElement element5a = driver.findElement(By.xpath("//*[@id=\"distributor-dropdown\"]"));
 		//jse.executeScript("arguments[0].click()", element5);   // Click on the Distributer dropdown

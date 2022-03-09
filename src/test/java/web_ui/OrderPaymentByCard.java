@@ -27,7 +27,7 @@ public class OrderPaymentByCard {
 	
 
 	@BeforeTest
-	public static void ChromeSelection() {
+	public void ChromeSelection() {
 		if (browser.equals("Firfor")) {
 			WebDriverManager.firefoxdriver().setup();
 			driver = new FirefoxDriver();
@@ -47,7 +47,7 @@ public class OrderPaymentByCard {
 
 	}
 	@BeforeMethod
-	public static void LoginProcess() {
+	public void LoginProcess() {
 		driver.get("https://stg.medznmore.com/login");
 		
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
@@ -65,7 +65,7 @@ public class OrderPaymentByCard {
 		System.out.println("Sign in successfully");
 	}
 	@Test(groups="OrderFlow", description="Order Payment By Card")
-	public static void OrderPaymentByCardProcess() {
+	public void OrderPaymentByCardProcess() {
 	//int i;
 	//for(i=0;i<2;i++) {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
@@ -178,5 +178,10 @@ public class OrderPaymentByCard {
 	public void quit() {
 		driver.quit();
 	}
+//	@AfterSuite
+//	public void ReportEmailSend() {
+//		EmailTheReport etr = new EmailTheReport();
+//		etr.EmailSend();
+//	}
 
 }
