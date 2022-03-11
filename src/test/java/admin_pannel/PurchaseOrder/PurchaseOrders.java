@@ -83,18 +83,19 @@ public class PurchaseOrders {
 		WebElement element2 = driver.findElement(By.xpath("//span[text() = 'PO Management']"));
 		jse.executeScript("arguments[0].click()", element2);   // Click on the PO Management
 		//Thread.sleep(2000);
-		WebElement element3a = new WebDriverWait(driver, Duration.ofSeconds(3))
-				.until(ExpectedConditions.presenceOfElemen(By.xpath("//*[@id=\\\"root\\\"]/div/div[2]/div[2]/div/div/div[1]/a")));
+		WebElement element3a = new WebDriverWait(driver, Duration.ofSeconds(4))
+				.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"root\"]/div/div[2]/div[2]/div/div/div[1]/a")));
 		//WebElement element3 = driver.findElement(By.xpath("//*[@id=\"root\"]/div/div[2]/div[2]/div/div/div[1]/a"));
 		jse.executeScript("arguments[0].click()", element3a);   // Click on the CREATE
 		//Thread.sleep(2000);
 		WebElement element4a = new WebDriverWait(driver, Duration.ofSeconds(3))
-				.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\\\"root\\\"]/div/div[2]/div[2]/div/div[2]/div/div[2]/div/div[1]/div/div/div/div/button[2]")));
+				.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"store-dropdown\"]")));
 		//WebElement element4 = driver.findElement(By.xpath("//*[@id=\"root\"]/div/div[2]/div[2]/div/div[2]/div/div[2]/div/div[1]/div/div/div/div/button[2]"));
 		jse.executeScript("arguments[0].click()", element4a);   // Click on the Store Dropdown
-		//Thread.sleep(2000);
+		//Thread.sleep(200);
 		element4a.sendKeys("Pechs");
 		//Thread.sleep(300);
+		
 		element4a.sendKeys(Keys.ARROW_DOWN);
 		//Thread.sleep(300);
 		element4a.sendKeys(Keys.ARROW_DOWN);
@@ -108,13 +109,13 @@ public class PurchaseOrders {
 		//WebElement element5 = driver.findElement(By.xpath("//*[@id=\"root\"]/div/div[2]/div[2]/div/div[2]/div/div[2]/div/div[2]/div/div/div/div/button[2]"));
 		WebElement element5a = driver.findElement(By.xpath("//*[@id=\"distributor-dropdown\"]"));
 		//jse.executeScript("arguments[0].click()", element5);   // Click on the Distributer dropdown
-		Thread.sleep(1000);
+		//Thread.sleep(1000);
 		element5a.sendKeys("Real");
-		Thread.sleep(1000);
+		//Thread.sleep(1000);
 		element5a.sendKeys(Keys.ARROW_DOWN);
-		Thread.sleep(300);
+		//Thread.sleep(300);
 		element5a.sendKeys(Keys.ARROW_DOWN);
-		Thread.sleep(300);
+		//Thread.sleep(300);
 //		element5.sendKeys(Keys.ARROW_DOWN);
 //		Thread.sleep(300);
 //		element5.sendKeys(Keys.ARROW_DOWN);
